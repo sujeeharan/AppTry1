@@ -1,0 +1,80 @@
+<!--
+  Generated template for the Services page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+  Search Bar
+  (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)"
+-->
+
+<ion-header>
+
+<ion-navbar>
+    <ion-toolbar>
+    <ion-buttons start>
+      <ion-searchbar
+        [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel"
+        >
+      </ion-searchbar>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)='gotoProfile();'>
+        <ion-icon name="person" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div padding>
+  <ion-segment [(ngModel)]="gender">
+    <ion-segment-button value="Male">
+      Male
+    </ion-segment-button>
+    <ion-segment-button value="Female">
+      Female
+    </ion-segment-button>
+  </ion-segment>
+</div>
+<div [ngSwitch]="gender">
+  <ion-list *ngSwitchCase="'Male'">
+    <ion-item>
+      <ion-card >
+        <img src="../../assets/saloons/Ramani.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              Ramani Fernando 
+            </ion-card-title>
+            <p>
+            The most popular industrial group ever, and largely
+             responsible for bringing the music to a mass audience.
+          </p>
+          </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'Female'">
+    <ion-item>
+            <ion-card >
+      <img src="../../assets/saloons/logo-black.png"/>
+      <ion-card-content>
+        <ion-card-title>
+          Scissors
+          </ion-card-title>
+        <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+        </p>
+      </ion-card-content>
+    </ion-card>
+    
+    </ion-item>
+      </ion-list>
+</div>
+</ion-content>
